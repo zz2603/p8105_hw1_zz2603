@@ -14,13 +14,26 @@ library(tidyverse)
 
 ```{r problem 1, echo=TRUE}
 set.seed(100)
+
+## set four variables in data frame
 rand_norm <- rnorm(8)
 log_vec <- rand_norm>0
 char_vec <- c("husky","Akita","Shiba Inu","Alaska","Samoyed","Pekingese",
               "British Blue Cat","Orange Cat")
 level_vec <- c("Low","High","High","Low","Low","Mid","Mid","Mid")%>%factor()
 
+## combine them together and create a new data frame
 prob1_df <- tibble(rand_norm,log_vec,char_vec,level_vec)
+prob1_df
+
+## see mean of four variable
+mean(pull(prob1_df,rand_norm)) ## it works!
+mean(pull(prob1_df,log_vec)) ## it also works!
+mean(pull(prob1_df,char_vec)) ## it does not work and returns NA
+mean(pull(prob1_df,level_vec)) ## it does not work and returns NA
+
+
+
 
 
 ```
