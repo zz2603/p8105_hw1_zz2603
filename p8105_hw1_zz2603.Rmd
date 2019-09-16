@@ -13,6 +13,14 @@ library(tidyverse)
 
 
 ```{r problem 1, echo=TRUE}
+set.seed(100)
+rand_norm <- rnorm(8)
+log_vec <- rand_norm>0
+char_vec <- c("husky","Akita","Shiba Inu","Alaska","Samoyed","Pekingese",
+              "British Blue Cat","Orange Cat")
+level_vec <- c("Low","High","High","Low","Low","Mid","Mid","Mid")%>%factor()
+
+prob1_df <- tibble(rand_norm,log_vec,char_vec,level_vec)
 
 
 ```
