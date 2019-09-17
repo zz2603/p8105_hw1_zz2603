@@ -454,9 +454,12 @@ plot_df</code></pre>
 ## 10  0.511  -1.38   FALSE             0 FALSE    
 ## # ... with 490 more rows</code></pre>
 <ul>
-<li>the size of dataset is <code>nrow(plot_df),ncol(plot_df)</code>.</li>
-<li>the mean, median and standard deviation are <code>mean(pull(plot_df,x)), median(pull(plot_df,x)), sd(pull(plot_df,x))</code>.</li>
-<li>the proportion of cases for logical vector is <code>sum(pull(plot_df,logic_vtr))/length(pull(plot_df,logic_vtr))</code>.</li>
+<li>the number of row of dataset is 500</li>
+<li>the number of columes of dataset is 5.</li>
+<li>the mean of x is -0.0406178.</li>
+<li>the median of x is -0.0656534.</li>
+<li>the standard deviation 1.0151934.</li>
+<li>the proportion of cases for logical vector is 0.246.</li>
 </ul>
 <pre class="r"><code>plot1 &lt;- ggplot(plot_df, aes(x=x,y=y,color=logic_vtr))+geom_point()
 plot1</code></pre>

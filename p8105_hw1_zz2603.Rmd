@@ -35,7 +35,7 @@ mean(pull(prob1_df,level_vec)) ## it does not work and returns NA
 Only mean of numeric and logical vectors return the numeric result.
 However, the other two vector, in character and factor, return NA.
 
-```{r problem 1 convert type, echo=True}
+```{r problem 1 convert type, echo=TRUE}
 log_num <- as.numeric(log_vec)
 log_num
 char_num <- as.numeric(char_vec)
@@ -67,11 +67,14 @@ logic_ftr <- as.factor(logic_vtr)
 plot_df <- tibble(x,y,logic_vtr,logic_num,logic_ftr)
 plot_df
 ```
-* the size of dataset is `nrow(plot_df),ncol(plot_df)`.
-* the mean, median and standard deviation are `mean(pull(plot_df,x)), median(pull(plot_df,x)), sd(pull(plot_df,x))`. 
-* the proportion of cases for logical vector is `sum(pull(plot_df,logic_vtr))/length(pull(plot_df,logic_vtr))`.
+* the number of row of dataset is `r nrow(plot_df)`
+* the number of columes of dataset is `r ncol(plot_df)`.
+* the mean of x is `r mean(pull(plot_df,x))`.
+* the median of x is `r median(pull(plot_df,x))`.
+* the standard deviation `r sd(pull(plot_df,x))`. 
+* the proportion of cases for logical vector is `r sum(pull(plot_df,logic_vtr))/length(pull(plot_df,logic_vtr))`.
 
-```{r plot}
+```{r plot, echo=TRUE}
 plot1 <- ggplot(plot_df, aes(x=x,y=y,color=logic_vtr))+geom_point()
 plot1
 
