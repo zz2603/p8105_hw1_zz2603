@@ -46,3 +46,18 @@ fac_num
 As we transfer logical vector into numeric vector, all values ("True" and "False") are tranferred to 1 and 0. This is why we get numeric value when we apply mean function to logical vector.
 All values in character vector are transferred into NA when we tried to convert non-numeric character into numeric values. This is why mean function return NA.
 When we converted the factor vector into numeric value, three levels are converted into numeric values 1,2 and 3. However, mean of factor vector return NA. I think the reason is that all values in factor vector are non-numeric.
+
+```{r}
+## in last chunk, we convert log_vec into numeric vector log_num
+logNumRD <- log_num*rand_norm 
+logNumRD
+logFacRD <- as.factor(log_vec)*rand_norm ## multiplying seems quite useless
+logFacRD
+logFacNumRD <- (as.factor(log_vec)%>%as.numeric())*rand_norm
+logFacNumRD
+```
+
+```{r}
+
+```
+
