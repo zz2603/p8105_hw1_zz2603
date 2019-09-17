@@ -71,7 +71,11 @@ plot_df
 * the mean, median and standard deviation are `mean(pull(plot_df,x)), median(pull(plot_df,x)), sd(pull(plot_df,x))`. 
 * the proportion of cases for logical vector is `sum(pull(plot_df,logic_vtr))/length(pull(plot_df,logic_vtr))`.
 
-```{r }
+```{r plot}
+ggplot(plot_df, aes(x=x,y=y,color=logic_vtr))+geom_point()
 
+ggplot(plot_df, aes(x=x,y=y,color=logic_num))+geom_point()
+
+ggplot(plot_df, aes(x=x,y=y,color=logic_ftr))+geom_point()
 ```
 
