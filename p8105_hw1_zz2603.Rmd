@@ -47,7 +47,7 @@ As we transfer logical vector into numeric vector, all values ("True" and "False
 All values in character vector are transferred into NA when we tried to convert non-numeric character into numeric values. This is why mean function return NA.
 When we converted the factor vector into numeric value, three levels are converted into numeric values 1,2 and 3. However, mean of factor vector return NA. I think the reason is that all values in factor vector are non-numeric.
 
-```{r}
+```{r,echo=TRUE}
 ## in last chunk, we convert log_vec into numeric vector log_num
 logNumRD <- log_num*rand_norm 
 logNumRD
@@ -57,7 +57,21 @@ logFacNumRD <- (as.factor(log_vec)%>%as.numeric())*rand_norm
 logFacNumRD
 ```
 
-```{r}
+```{r problem 2,echo=TRUE}
+x <- rnorm(500)
+y <- rnorm(500)
+logic_vtr <- (x+y)>1
+logic_num <- as.numeric(logic_vtr)
+logic_ftr <- as.factor(logic_vtr)
+
+plot_df <- tibble(x,y,logic_vtr,logic_num,logic_ftr)
+plot_df
+```
+* the size of dataset is `nrow(plot_df),ncol(plot_df)`.
+* the mean, median and standard deviation are `mean(pull(plot_df,x)), median(pull(plot_df,x)), sd(pull(plot_df,x))`. 
+* the proportion of cases for logical vector is `sum(pull(plot_df,logic_vtr))/length(pull(plot_df,logic_vtr))`.
+
+```{r }
 
 ```
 
